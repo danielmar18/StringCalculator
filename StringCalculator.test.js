@@ -25,3 +25,7 @@ it("Should not allow negative numbers", () => {
         add("-6, 3")
     }).toThrow();
 });
+
+it("Should ignore numbers bigger than 1000", () => {
+    expect(add("6,1001\n2")).toBe(8);
+});

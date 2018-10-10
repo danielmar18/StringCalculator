@@ -17,8 +17,10 @@ function add(number){
 function sum(numberArray){
     var total = 0;
     for(var i = 0; i < numberArray.length; i++){
+        if(parseInt(numberArray[i]) < 1000){
         total += parseInt(numberArray[i]);
     }
+}
     return total;
 }
 
