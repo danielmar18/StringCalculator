@@ -1,0 +1,22 @@
+{
+  "name": "stringcalculator",
+  "version": "1.0.0",
+  "description": "TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmar18/StringCalculator.git"
+  },
+  "author": "Daníel Már",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmar18/StringCalculator/issues"
+  },
+  "homepage": "https://github.com/danielmar18/StringCalculator#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
