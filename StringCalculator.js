@@ -46,14 +46,14 @@ function negativeNumbersCheck(number){
 }
 
 function new_delimiter(number){
-    var del_index = number.indexOf("\n");
-    var delimiter = number.substring(2, del_index);
-    var foo = number.substring(del_index);
-    var numberArray = number.split(delimiter);
+    var nl_index = number.indexOf("\n");
+    var delimiter = number.substring(2, nl_index);
+    var foo = number.substring(nl_index);
+    var numberArray = foo.split(/[\n,]+delimiter/);
     var total = 0;
-    for(var i = 0; i < numberArray.length; i++){
-        if(parseInt(numberArray[i]) < 1000){
-        total += parseInt(numberArray[i]);
+    for(var i = 0; i < foo.length; i++){
+        if(parseInt(foo[i]) < 1000){
+        total += parseInt(foo[i]);
         }
     }
         return total;
