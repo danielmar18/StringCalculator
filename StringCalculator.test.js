@@ -19,3 +19,9 @@ it("Should summize multiple numbers", () => {
 it("Should split on newline", () => {
     expect(add("6\n2")).toBe(8);
 });
+
+it("Should not allow negative numbers", () => {
+    expect(() => {
+        add("-6, 3")
+    }).toThrow();
+});
