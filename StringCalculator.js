@@ -48,12 +48,12 @@ function negativeNumbersCheck(number){
 function new_delimiter(number){
     var nl_index = number.indexOf("\n");
     var delimiter = number.substring(2, nl_index);
-    var foo = number.substring(nl_index);
-    var numberArray = foo.split(/[\n,]+delimiter/);
+    var foo = new RegExp("["+delimiter+"\n,]+","g");
+    var numberArray = number.substring(nl_index).split(foo);
     var total = 0;
-    for(var i = 0; i < foo.length; i++){
-        if(parseInt(foo[i]) < 1000){
-        total += parseInt(foo[i]);
+    for(var i = 0; i < numberArray.length; i++){
+        if(parseInt(numberArray[i]) < 1000){
+            total += parseInt(numberArray[i]);
         }
     }
         return total;
