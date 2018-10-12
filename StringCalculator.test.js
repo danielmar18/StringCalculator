@@ -22,7 +22,7 @@ it("Should split on newline", () => {
 
 it("Should not allow negative numbers", () => {
     expect(() => {
-        add("-6, 3")
+        add("6, -3")
     }).toThrow();
 });
 
@@ -36,4 +36,8 @@ it("Should be able to handle new delimiters", () => {
 
 it("Should be able to handle new delimiters and keep old ones", () => {
     expect(add("//***\n5***5\n5***5,5")).toBe(25);
+});
+
+it("Should be able to handle edge cases", () => {
+    expect(add("//---\n5---5\n5---5,5")).toBe(25);
 });

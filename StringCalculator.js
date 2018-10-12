@@ -7,7 +7,12 @@ function add(number){
     }
 
     if(number.includes("-")){
-        negativeNumbersCheck(number);
+        var stringNumbers = number.split(/[\n,]+/);
+        var en = negativeNumbersCheck(stringNumbers);
+        var bool = negativec(en);
+        if(bool == false){
+            throw "Negatives not allowed" + en;
+        }
     }
 
     if(number.includes(",") || number.includes("\n")){
@@ -30,7 +35,6 @@ function sum(number){
 }
 
 function negativeNumbersCheck(number){
-        var stringNumbers = number.split(/[\n,]+/);
         var errorNumbers = "";
         for(var i = 0; i < stringNumbers.length; i++){
             if(stringNumbers[i].includes("-")){
@@ -41,9 +45,19 @@ function negativeNumbersCheck(number){
                     errorNumbers += (", " + stringNumbers[i]);
                 }
         }
-        throw "Negatives not allowed:" + errorNumbers;
+        throw "Negatives not allowed: " + errorNumbers;
     }
 }
+
+function negativec(en){
+    if(en == ""){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 
 function new_delimiter(number){
     var nl_index = number.indexOf("\n");
