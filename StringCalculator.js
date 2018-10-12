@@ -8,27 +8,22 @@ function add(number){
 
     if(number.includes("-")){
         var stringNumbers = number.split(/[\n,]+/);
-        var en = negativeNumbersCheck(stringNumbers);
-        var bool = negativec(en);
-        if(bool == false){
-            throw "Negatives not allowed" + en;
-        }
+        negativeNumbersCheck(stringNumbers);
     }
 
     if(number.includes(",") || number.includes("\n")){
-        return sum(number);
+        var numberArray = number.split(/[\n,]+/);
+        return sum(numberArray);
     }
     else
         return parseInt(number);
 }
 
-
 function sum(number){
-    var numberArray = number.split(/[\n,]+/);
     var total = 0;
-    for(var i = 0; i < numberArray.length; i++){
-        if(parseInt(numberArray[i]) < 1000){
-        total += parseInt(numberArray[i]);
+    for(var i = 0; i < number.length; i++){
+        if(parseInt(number[i]) <= 1000){
+        total += parseInt(number[i]);
     }
 }
     return total;
@@ -49,27 +44,11 @@ function negativeNumbersCheck(number){
     }
 }
 
-function negativec(en){
-    if(en == ""){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-
 function new_delimiter(number){
     var nl_index = number.indexOf("\n");
     var delimiter = number.substring(2, nl_index);
     var foo = new RegExp("["+delimiter+"\n,]+","g");
     var numberArray = number.substring(nl_index).split(foo);
-    var total = 0;
-    for(var i = 0; i < numberArray.length; i++){
-        if(parseInt(numberArray[i]) < 1000){
-            total += parseInt(numberArray[i]);
-        }
-    }
-        return total;
+    return sum(numberArray);
 }
 module.exports = add;
