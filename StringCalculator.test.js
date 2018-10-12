@@ -41,3 +41,7 @@ it("Should be able to handle new delimiters and keep old ones", () => {
 it("Should be able to handle edge cases", () => {
     expect(add("//---\n5---5\n5---5,5")).toBe(25);
 });
+
+it("Should be able to handle edge cases", () => {
+    expect(add("10001")).toBe(0);
+});

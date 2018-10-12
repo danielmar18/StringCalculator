@@ -16,7 +16,10 @@ function add(number){
         return sum(numberArray);
     }
     else
-        return parseInt(number);
+        if(parseInt(number) <= 1000){
+            return parseInt(number);    
+        }
+        else return 0;
 }
 
 function sum(number){
